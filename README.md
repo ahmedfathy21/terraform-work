@@ -3,7 +3,7 @@
 This project demonstrates how to use Terraform to create an instance and output its IP address.
 
 ## Prerequisites
-
+  
 - Terraform installed on your machine
 - AWS account with appropriate permissions
 

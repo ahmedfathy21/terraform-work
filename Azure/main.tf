@@ -97,3 +97,22 @@ resource "azurerm_storage_container" "container" {
   storage_account_name  = azurerm_storage_account.storage.name
   container_access_type = "private"
 }
+resource "azurerm_container_group" "container" {
+  name                = "kakashi"
+  location            = "East US"
+  resource_group_name = "myResourceGroup"
+  ip_address_type     = "Public"
+  os_type            = "Linux"  # or "Windows"
+
+  container {
+    name   = "kakashi"
+    image  = "mcr.microsoft.com/azuredocs/aci-helloworld:latest"
+    cpu    = "1.0"
+    memory = "1.5"
+
+    ports {
+      port     = 80
+      protocol = "TCP"
+    }
+  }
+}
